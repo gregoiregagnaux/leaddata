@@ -57,7 +57,7 @@
 [data-dir="b"] .site-header:not(.is-scrolled) .seg button { color: rgba(255,255,255,.7); }
 [data-dir="b"] .site-header:not(.is-scrolled) .seg button[aria-pressed="true"] { color: #07313d; background: #eafcff; }
 [data-dir="b"] .site-header:not(.is-scrolled) .btn--ghost { color: #fff; border-color: rgba(255,255,255,.32); }
-[data-dir="b"] .site-header:not(.is-scrolled) .nav-toggle { color: #fff; border-color: rgba(255,255,255,.3); }
+[data-dir="b"] .site-header:not(.is-scrolled) .nav-toggle { color: #fff; border-color: rgba(255,255,255,.32); background: rgba(255,255,255,.1); backdrop-filter: blur(4px); }
 [data-dir="b"] .site-header:not(.is-scrolled) .lang-globe { color: rgba(255,255,255,.7); }
 [data-dir="b"] .feature .ficon, [data-dir="b"] .know-item .kdot { background: color-mix(in srgb, var(--b-accent) 13%, #fff); border-color: color-mix(in srgb, var(--b-accent) 30%, #fff); color: var(--petrol-700); }
 [data-dir="b"] .uc-metric .v, [data-dir="b"] .step .num { color: var(--petrol); }

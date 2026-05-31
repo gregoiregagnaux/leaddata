@@ -166,7 +166,12 @@
 .member .m-soc a:hover { border-color: var(--petrol); color: var(--petrol); transform: translateY(-2px); }
 @media (max-width: 960px){ .company { grid-template-columns: 1fr; } .company-visual{ max-width: 420px; } }
 @media (max-width: 760px){ .team { grid-template-columns: 1fr; } }
-@media (max-width: 420px){ .member { grid-template-columns: 1fr; } .member .m-photo{ width: 130px; height: 160px; } }
+@media (max-width: 600px){
+  .member { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .member .m-photo { width: 140px; height: 176px; }
+  .member .m-actions { justify-content: center; }
+}
+@media (max-width: 420px){ .member .m-photo{ width: 130px; height: 160px; } }
 
 /* ---------------- CONTACT ---------------- */
 .contact { position: relative; overflow: hidden; border-radius: clamp(20px,3vw,34px); background: var(--petrol); color: #fff; padding: clamp(46px, 7vw, 84px); display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: center; }
