@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr" data-dir="b">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LeadData — De la donnée naît la décision</title>
+<meta name="description" content="LeadData — cabinet de conseil en innovation par la donnée. Nous transformons vos données en connaissances exploitables." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/base.css" />
+<link rel="stylesheet" href="assets/components.css" />
+<link rel="stylesheet" href="assets/directions.css" />
+</head>
+<body>
+<div class="scrollbar" id="scrollbar"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="header">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="LeadData">
+      <span class="lead">Lead</span><span class="data">Data</span><span class="dot"></span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#method" data-i18n="nav.approach">Démarche</a>
+      <a href="#expertise" data-i18n="nav.expertise">Savoir-faire</a>
+      <a href="#cases" data-i18n="nav.cases">Cas d’usage</a>
+      <a href="#company" data-i18n="nav.company">Cabinet</a>
+    </nav>
+    <div class="nav-right">
+      <div class="seg seg--lang lang-seg" role="group" aria-label="Langue / Language">
+        <span class="lang-globe" data-icon="globe" aria-hidden="true"></span>
+        <button data-lang="fr" aria-pressed="true">FR</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--primary desktop-only" href="#contact" data-i18n="nav.cta">Parler à un expert</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu"></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <canvas class="hero-canvas" id="hero-canvas"></canvas>
+    <div class="container hero-inner">
+      <span class="eyebrow reveal" data-i18n="hero.eyebrow">Conseil — Innovation par la donnée</span>
+      <h1 class="h-xl reveal" data-d="1" data-i18n="hero.title">De la donnée<br>naît la <span class="accentword">décision</span>.</h1>
+      <p class="lede reveal" data-d="2" data-i18n="hero.lede">Nous transformons vos données en connaissances exploitables.</p>
+      <div class="hero-cta reveal" data-d="3">
+        <a class="btn btn--primary" href="#cases"><span data-i18n="hero.cta1">Voir nos cas d’usage</span><span data-icon="arrow"></span></a>
+        <a class="btn btn--ghost" href="#method" data-i18n="hero.cta2">Notre démarche</a>
+      </div>
+      <div class="hero-stats reveal" data-d="4">
+        <div class="stat"><div class="n" data-i18n="hero.s1n">10+</div><div class="l" data-i18n="hero.s1l">années d’expertise data</div></div>
+        <div class="stat"><div class="n" data-i18n="hero.s2n">de bout en bout</div><div class="l" data-i18n="hero.s2l">du cadrage à l’industrialisation</div></div>
+        <div class="stat"><div class="n" data-i18n="hero.s3n">100 % sur-mesure</div><div class="l" data-i18n="hero.s3l">solutions conçues pour votre métier</div></div>
+      </div>
+      <div class="hero-trust reveal" data-d="5"><span data-i18n="hero.trust">Cabinet indépendant · Data & IA · Territorialisation</span></div>
+    </div>
+  </section>
+
+  <!-- ============ MISSION (5 capacités) ============ -->
+  <section class="section" id="mission">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow reveal" data-i18n="mission.eyebrow">Notre raison d’être</span>
+        <h2 class="h-lg reveal" data-d="1" data-i18n="mission.title">Donner du sens à la donnée.</h2>
+        <p class="lede reveal" data-d="2" data-i18n="mission.lede">Cinq leviers que nous activons sur chacune de nos missions.</p>
+      </div>
+      <div class="mission-grid reveal" data-d="1">
+        <div class="mission-cell"><span class="idx">01</span><h3 data-i18n="mission.c1t">Valoriser</h3><p data-i18n="mission.c1d"></p></div>
+        <div class="mission-cell"><span class="idx">02</span><h3 data-i18n="mission.c2t">Anticiper</h3><p data-i18n="mission.c2d"></p></div>
+        <div class="mission-cell"><span class="idx">03</span><h3 data-i18n="mission.c3t">Performer</h3><p data-i18n="mission.c3d"></p></div>
+        <div class="mission-cell"><span class="idx">04</span><h3 data-i18n="mission.c4t">Construire</h3><p data-i18n="mission.c4d"></p></div>
+        <div class="mission-cell"><span class="idx">05</span><h3 data-i18n="mission.c5t">Faire évoluer</h3><p data-i18n="mission.c5d"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DÉMARCHE (4 étapes) ============ -->
+  <section class="section band" id="method">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow reveal" data-i18n="method.eyebrow">Notre démarche</span>
+        <h2 class="h-lg reveal" data-d="1" data-i18n="method.title">Un accompagnement de bout en bout.</h2>
+        <p class="lede reveal" data-d="2" data-i18n="method.lede">Quatre phases, une même exigence.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal" data-d="1"><div class="num">01</div><div class="body"><h3 data-i18n="method.s1t">Cadrage & Design Sprint</h3><p data-i18n="method.s1d"></p></div><div class="phase" data-i18n="method.s1p">Phase 01</div></div>
+        <div class="step reveal" data-d="2"><div class="num">02</div><div class="body"><h3 data-i18n="method.s2t">Preuve de concept</h3><p data-i18n="method.s2d"></p></div><div class="phase" data-i18n="method.s2p">Phase 02</div></div>
+        <div class="step reveal" data-d="3"><div class="num">03</div><div class="body"><h3 data-i18n="method.s3t">Industrialisation</h3><p data-i18n="method.s3d"></p></div><div class="phase" data-i18n="method.s3p">Phase 03</div></div>
+        <div class="step reveal" data-d="4"><div class="num">04</div><div class="body"><h3 data-i18n="method.s4t">Formation & adoption</h3><p data-i18n="method.s4d"></p></div><div class="phase" data-i18n="method.s4p">Phase 04</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DISTINCTION (3 atouts) ============ -->
+  <section class="section" id="distinct">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow reveal" data-i18n="distinct.eyebrow">Ce qui nous distingue</span>
+        <h2 class="h-lg reveal" data-d="1" data-i18n="distinct.title">Le besoin d’abord, la technologie ensuite.</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature card reveal" data-d="1"><div class="ficon"></div><h3 data-i18n="distinct.d1t">Une approche orientée besoin</h3><p data-i18n="distinct.d1d"></p></div>
+        <div class="feature card reveal" data-d="2"><div class="ficon"></div><h3 data-i18n="distinct.d2t">La territorialisation</h3><p data-i18n="distinct.d2d"></p></div>
+        <div class="feature card reveal" data-d="3"><div class="ficon"></div><h3 data-i18n="distinct.d3t">Les données publiques</h3><p data-i18n="distinct.d3d"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SAVOIR-FAIRE ============ -->
+  <section class="section soft" id="expertise">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow reveal" data-i18n="know.eyebrow">Notre savoir-faire</span>
+        <h2 class="h-lg reveal" data-d="1" data-i18n="know.title">Un spectre complet de compétences.</h2>
+      </div>
+      <div class="know">
+        <div class="know-list">
+          <div class="know-item reveal" data-d="1"><div class="kdot"></div><div><h3 data-i18n="know.k1t">Pilotage de projets innovants</h3><p data-i18n="know.k1d"></p></div></div>
+          <div class="know-item reveal" data-d="2"><div class="kdot"></div><div><h3 data-i18n="know.k2t">Traitement & modélisation</h3><p data-i18n="know.k2d"></p></div></div>
+          <div class="know-item reveal" data-d="3"><div class="kdot"></div><div><h3 data-i18n="know.k3t">Visualisation & transmission</h3><p data-i18n="know.k3d"></p></div></div>
+          <div class="know-item reveal" data-d="4"><div class="kdot"></div><div><h3 data-i18n="know.k4t">Formation & gouvernance</h3><p data-i18n="know.k4d"></p></div></div>
+        </div>
+        <div class="stackcard reveal" data-d="2">
+          <div><h3 data-i18n="know.stackt">Une boîte à outils maîtrisée</h3><p data-i18n="know.stackd"></p></div>
+          <div>
+            <div class="chip-group-label" data-i18n="know.lbl1">Données</div>
+            <div class="chips" style="margin-top:10px">
+              <span class="chip">SQL · Oracle</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span>
+            </div>
+          </div>
+          <div>
+            <div class="chip-group-label" data-i18n="know.lbl2">Analyse & modélisation</div>
+            <div class="chips" style="margin-top:10px">
+              <span class="chip">Python</span><span class="chip">R</span><span class="chip">MatLab</span><span class="chip">Machine Learning</span>
+            </div>
+          </div>
+          <div>
+            <div class="chip-group-label" data-i18n="know.lbl3">Visualisation</div>
+            <div class="chips" style="margin-top:10px">
+              <span class="chip">Tableau</span><span class="chip">Cartographie</span><span class="chip">Web apps</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAS D'USAGE (CMS) ============ -->
+  <section class="section band" id="cases">
+    <div class="container">
+      <div class="uc-top">
+        <div class="section-head">
+          <span class="eyebrow reveal" data-i18n="cases.eyebrow">Cas d’usage clients</span>
+          <h2 class="h-lg reveal" data-d="1" data-i18n="cases.title">La donnée à l’œuvre, sur le terrain.</h2>
+          <p class="lede reveal" data-d="2" data-i18n="cases.lede">Une sélection de projets.</p>
+        </div>
+      </div>
+      <div class="uc-filters reveal" id="uc-filters"></div>
+      <div class="uc-grid" id="uc-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ CLIENTS ============ -->
+  <section class="section--tight" id="clients">
+    <div class="container">
+      <p class="eyebrow eyebrow--center reveal" style="display:flex;justify-content:center;margin-bottom:34px" data-i18n="clients.title">Ils nous font confiance</p>
+    </div>
+    <div class="marquee"><div class="marquee-track" id="marquee-track"></div></div>
+  </section>
+
+  <!-- ============ ENTREPRISE & ASSOCIÉS ============ -->
+  <section class="section soft" id="company">
+    <div class="container">
+      <div class="company">
+        <div class="company-text">
+          <span class="eyebrow reveal" data-i18n="company.eyebrow">Le cabinet</span>
+          <h2 class="h-lg reveal" data-d="1" style="margin-top:18px" data-i18n="company.title">Une structure indépendante.</h2>
+          <p class="reveal measure" data-d="2" style="margin-top:22px;color:var(--ink-soft)" data-i18n="company.p1"></p>
+          <p class="reveal measure" data-d="2" style="margin-top:16px;color:var(--ink-soft)" data-i18n="company.p2"></p>
+          <div class="company-figures reveal" data-d="3">
+            <div class="fig"><div class="n" data-i18n="company.f1n">2</div><div class="l" data-i18n="company.f1l">associés fondateurs</div></div>
+            <div class="fig"><div class="n" data-i18n="company.f2n">Public & privé</div><div class="l" data-i18n="company.f2l">collectivités, industrie</div></div>
+            <div class="fig"><div class="n" data-i18n="company.f3n">France</div><div class="l" data-i18n="company.f3l">tout le territoire</div></div>
+          </div>
+        </div>
+        <div class="company-visual reveal" data-d="2">
+          <div class="brand-visual" id="brand-visual" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <h3 class="h-md reveal" style="margin-top:84px" data-i18n="company.team">Les associés fondateurs</h3>
+      <div class="team">
+        <article class="member reveal" data-d="1">
+          <img class="m-photo" src="assets/assoc-1.webp" alt="Jacques Dufossé" width="150" height="188" />
+          <div>
+            <div class="m-name" data-i18n="m1.name">Prénom Nom</div>
+            <div class="m-role" data-i18n="m1.role">Associé fondateur</div>
+            <p class="m-bio" data-i18n="m1.bio"></p>
+            <div class="m-actions">
+              <button class="m-more" data-member="m1"><span data-i18n="member.read">Lire le parcours</span><span data-icon="arrow"></span></button>
+              <div class="m-soc"><a href="#" aria-label="LinkedIn"></a></div>
+            </div>
+          </div>
+        </article>
+        <article class="member reveal" data-d="2">
+          <img class="m-photo" src="assets/assoc-2.webp" alt="Jean-Baptiste Biau" width="150" height="188" />
+          <div>
+            <div class="m-name" data-i18n="m2.name">Prénom Nom</div>
+            <div class="m-role" data-i18n="m2.role">Associé fondateur</div>
+            <p class="m-bio" data-i18n="m2.bio"></p>
+            <div class="m-actions">
+              <button class="m-more" data-member="m2"><span data-i18n="member.read">Lire le parcours</span><span data-icon="arrow"></span></button>
+              <div class="m-soc"><a href="#" aria-label="LinkedIn"></a></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact reveal">
+        <div>
+          <span class="eyebrow" style="color:rgba(255,255,255,.8)" data-i18n="contact.eyebrow">Parlons-en</span>
+          <h2 class="h-lg" style="margin:16px 0 18px" data-i18n="contact.title">Un projet de données ?</h2>
+          <p data-i18n="contact.p"></p>
+          <a class="btn btn--light" style="margin-top:26px" href="mailto:contact@leaddata.fr"><span data-i18n="contact.cta">Démarrer la conversation</span><span data-icon="arrow"></span></a>
+        </div>
+        <div class="cbox">
+          <div class="cline"><span class="ci" data-icon="mail"></span><a href="mailto:contact@leaddata.fr" data-i18n="contact.email">contact@leaddata.fr</a></div>
+          <div class="cline"><span class="ci" data-icon="pinSm"></span><span>69 rue Parmentier, 93100 Montreuil</span></div>
+          <div class="cline"><span class="ci" data-icon="linkedin"></span><a href="#">LinkedIn — LeadData</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top"><span class="lead">Lead</span><span class="data">Data</span><span class="dot"></span></a>
+        <p style="margin:16px 0 0;max-width:30ch;color:#9aa4a8;font-style:italic;font-family:var(--ff-display)" data-i18n="footer.tag">La donnée donne naissance à l’information.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.nav">Navigation</h4>
+        <ul>
+          <li><a href="#method" data-i18n="nav.approach">Démarche</a></li>
+          <li><a href="#expertise" data-i18n="nav.expertise">Savoir-faire</a></li>
+          <li><a href="#cases" data-i18n="nav.cases">Cas d’usage</a></li>
+          <li><a href="#company" data-i18n="nav.company">Cabinet</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="nav.contact">Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@leaddata.fr">contact@leaddata.fr</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.address">Adresse</h4>
+        <ul>
+          <li>69 rue Parmentier</li>
+          <li>93100 Montreuil</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.rights">© 2026 LeadData. Tous droits réservés.</span>
+      <span data-i18n="footer.made">Conçu autour de la donnée.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MODAL (fiche cas d'usage / parcours associé) ============ -->
+<div class="modal" id="modal" aria-modal="true" role="dialog">
+  <div class="modal-scrim" id="modal-scrim"></div>
+  <div class="modal-panel" id="modal-body"></div>
+</div>
+
+<script src="assets/content.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

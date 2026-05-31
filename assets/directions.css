@@ -1,0 +1,67 @@
+/* =========================================================
+   LeadData — Visual theme : B — Signal (unique)
+   Petrol #066E87 reste la couleur primaire ; accent cyan.
+   Appliqué via [data-dir="b"] (toujours présent sur <html>).
+   ========================================================= */
+
+/* ============== HERO — Signal : pétrole profond, grille animée, glow cyan ============== */
+[data-dir="b"] .hero {
+  background:
+    radial-gradient(80% 90% at 80% -10%, #0a4c5e 0%, transparent 55%),
+    radial-gradient(70% 80% at 0% 110%, #0b5468 0%, transparent 50%),
+    linear-gradient(160deg, #07313d 0%, #052730 60%, #04202a 100%);
+  color: #dff0f4;
+}
+[data-dir="b"] .hero .eyebrow { color: var(--b-accent); }
+[data-dir="b"] .hero .eyebrow::before { background: var(--b-accent); }
+[data-dir="b"] .hero h1 { color: #f2fbfd; }
+[data-dir="b"] .hero h1 .accentword { color: var(--b-accent); font-style: normal; }
+[data-dir="b"] .hero .lede { color: rgba(223,240,244,.78); }
+[data-dir="b"] .hero .hero-trust { color: rgba(223,240,244,.55); }
+[data-dir="b"] .hero .hero-stats .stat .n { color: #fff; }
+[data-dir="b"] .hero .hero-stats .stat .l { color: rgba(223,240,244,.7); }
+[data-dir="b"] .hero .btn--ghost { color: #ffffff; border-color: rgba(255,255,255,.38); }
+[data-dir="b"] .hero .btn--ghost:hover { border-color: var(--b-accent); color: var(--b-accent); }
+[data-dir="b"] .hero-canvas { opacity: 1; }
+[data-dir="b"] .hero-bg {
+  background: radial-gradient(60% 60% at 78% 30%, color-mix(in srgb, var(--b-accent) 26%, transparent), transparent 62%);
+  mix-blend-mode: screen; opacity: .5;
+}
+
+/* ============== Theme tokens — Signal ============== */
+[data-dir="b"] {
+  --b-accent: #21c9dd;
+  --accent: #21c9dd;
+  --bg:        #fbfdfe;
+  --bg-soft:   #f1f7f9;
+  --bg-band:   #e9f3f6;
+  --surface:   #ffffff;
+  --ink:       #0c2127;
+  --ink-soft:  #41565d;
+  --ink-faint: #6e868d;
+  --line:      #dfeaed;
+  --line-strong:#c5d7db;
+  --brand-on:  #066E87;
+  --ff-display: "Space Grotesk", system-ui, sans-serif;
+  --ff-sans: "Hanken Grotesk", system-ui, sans-serif;
+}
+[data-dir="b"] h1, [data-dir="b"] h2, [data-dir="b"] h3 { letter-spacing: -.03em; font-weight: 600; }
+[data-dir="b"] .h-xl { font-size: clamp(2.5rem, 6vw, 4.8rem); }
+[data-dir="b"] .hero h1 .accentword { font-style: normal; }
+/* nav over dark hero (avant scroll) */
+[data-dir="b"] .site-header:not(.is-scrolled) .brand .lead { color: #fff; }
+[data-dir="b"] .site-header:not(.is-scrolled) .brand .data { color: var(--b-accent); }
+[data-dir="b"] .site-header:not(.is-scrolled) .nav-links a { color: rgba(255,255,255,.78); }
+[data-dir="b"] .site-header:not(.is-scrolled) .nav-links a:hover { color: #fff; }
+[data-dir="b"] .site-header:not(.is-scrolled) .seg { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.18); }
+[data-dir="b"] .site-header:not(.is-scrolled) .seg button { color: rgba(255,255,255,.7); }
+[data-dir="b"] .site-header:not(.is-scrolled) .seg button[aria-pressed="true"] { color: #07313d; background: #eafcff; }
+[data-dir="b"] .site-header:not(.is-scrolled) .btn--ghost { color: #fff; border-color: rgba(255,255,255,.32); }
+[data-dir="b"] .site-header:not(.is-scrolled) .nav-toggle { color: #fff; border-color: rgba(255,255,255,.3); }
+[data-dir="b"] .site-header:not(.is-scrolled) .lang-globe { color: rgba(255,255,255,.7); }
+[data-dir="b"] .feature .ficon, [data-dir="b"] .know-item .kdot { background: color-mix(in srgb, var(--b-accent) 13%, #fff); border-color: color-mix(in srgb, var(--b-accent) 30%, #fff); color: var(--petrol-700); }
+[data-dir="b"] .uc-metric .v, [data-dir="b"] .step .num { color: var(--petrol); }
+[data-dir="b"] .brand .dot { background: var(--b-accent); }
+
+/* transition smoothing on interactive surfaces */
+.mission-cell, .step, .feature, .know-item, .uc-card, .member, .seg, .btn, .card { transition: background .5s var(--ease), border-color .5s var(--ease), color .5s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease); }
