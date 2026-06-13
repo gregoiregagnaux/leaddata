@@ -9,20 +9,22 @@ window.LD = {
     "nav.approach":  { fr: "Démarche",     en: "Method" },
     "nav.expertise": { fr: "Savoir-faire", en: "Expertise" },
     "nav.cases":     { fr: "Cas d’usage",  en: "Use cases" },
-    "nav.company":   { fr: "Cabinet",      en: "Firm" },
+    "nav.company":   { fr: "Le studio",    en: "Firm" },
     "nav.contact":   { fr: "Contact",      en: "Contact" },
     "nav.cta":       { fr: "Parler à un expert", en: "Talk to an expert" },
 
-    "hero.eyebrow":  { fr: "Conseil — Innovation par la donnée", en: "Consulting — Data-driven innovation" },
+    "hero.eyebrow":  { fr: "Studio d’innovation Data & IA", en: "Consulting — Data-driven innovation" },
     "hero.title":    { html: true,
-      fr: "De la donnée<br>naît la <span class=\"accentword\">décision</span>.",
+      fr: "Transformer la donnée<br>en produits, outils et <span class=\"accentword\">décisions</span>.",
       en: "Where data becomes<br>a <span class=\"accentword\">decision</span>." },
-    "hero.lede":     { fr: "Nous transformons vos données en connaissances exploitables — pour anticiper, décider et faire performer vos dispositifs digitaux de nouvelle génération.",
+    "hero.lede":     { fr: "Nous transformons vos données en outils d’aide à la décision, applications métiers et services à valeur ajoutée.",
                        en: "We turn your data into actionable knowledge — to anticipate, decide and drive the performance of your next-generation digital systems." },
     "hero.cta1":     { fr: "Voir nos cas d’usage", en: "See our use cases" },
     "hero.cta2":     { fr: "Notre démarche",       en: "Our method" },
-    "hero.trust":    { fr: "Cabinet indépendant · Data & IA · Territorialisation de l’information",
+    "hero.trust":    { fr: "Studio indépendant · Data & IA · Territorialisation de l’information",
                        en: "Independent firm · Data & AI · Spatial intelligence" },
+
+    "ticker.label":  { fr: "Nos expertises", en: "Our expertise" },
     "hero.s1n": { fr: "10+", en: "10+" },
     "hero.s1l": { fr: "années d’expertise data", en: "years of data expertise" },
     "hero.s2n": { fr: "360°", en: "360°" },
@@ -322,5 +324,10 @@ window.LD = {
   ],
 
   /* placeholder client names for the marquee */
-  clients: ["Nordia","Vireo","Atlas Métropole","Helix","Cairn","Méridien","Polaris","Steralis","Onéo","Verdant"]
+  clients: ["Nordia","Vireo","Atlas Métropole","Helix","Cairn","Méridien","Polaris","Steralis","Onéo","Verdant"],
+
+  /* ---- Bandeau « Nos expertises » (ticker hero→mission). Liste curée : think → build → run. ---- */
+  expertise: {
+    fr: ["Data","IA","Audit","Roadmap","MVP","Applications métiers","Automatisation","Déploiement","Performance","Maintenance","Scalabilité"]
+  }
 };

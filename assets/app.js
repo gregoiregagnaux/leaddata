@@ -157,6 +157,7 @@
     applyI18n();
     renderCases();
     buildMarquee();
+    buildExpertise();
     buildBrandVisual();
     typewriter();
   }
@@ -250,6 +251,15 @@
     if (!track) return;
     const item = (name, i) => `<div class="logo-item">${clientMark(i)}<span class="lname">${name}</span></div>`;
     const seq = LD.clients.map((n, i) => item(n, i)).join("");
+    track.innerHTML = seq + seq; // duplicate for seamless loop
+  }
+
+  /* ---------- Expertise ticker (hero→mission seam) ---------- */
+  function buildExpertise() {
+    const track = $("#xticker-track");
+    if (!track) return;
+    const words = (LD.expertise && (LD.expertise[state.lang] || LD.expertise.fr)) || [];
+    const seq = words.map(w => `<span class="xticker-word">${w}</span>`).join("");
     track.innerHTML = seq + seq; // duplicate for seamless loop
   }
 
@@ -356,6 +366,7 @@
     injectIcons();
     renderCases();
     buildMarquee();
+    buildExpertise();
     heroCanvas.init();
     buildBrandVisual();
 

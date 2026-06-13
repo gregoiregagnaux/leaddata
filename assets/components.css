@@ -137,6 +137,30 @@
 .logo-item .lname { font-family: var(--ff-display); font-weight: 600; font-size: 1.18rem; letter-spacing: -.01em; }
 .logo-item .lname small { font-family: var(--ff-mono); font-weight: 400; font-size: .62em; letter-spacing: .04em; opacity: .7; }
 
+/* ---------------- EXPERTISE ticker (couture hero → mission) ---------------- */
+.xticker { position: relative; display: flex; align-items: center; overflow: hidden;
+  background: linear-gradient(180deg, #04202a 0%, #062a35 100%);
+  border-bottom: 1px solid var(--line); }
+.xticker-label { flex: 0 0 auto; position: relative; z-index: 2; white-space: nowrap;
+  padding: 0 clamp(20px, 5vw, 64px);
+  font-family: var(--ff-mono); font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(223,240,244,.62); background: linear-gradient(180deg, #04202a 0%, #062a35 100%); }
+.xticker-label::after { content: ""; position: absolute; top: 0; bottom: 0; right: -30px; width: 30px;
+  background: linear-gradient(90deg, #062a35, transparent); }
+.xticker-marquee { position: relative; flex: 1 1 auto; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 93%, transparent); }
+.xticker-track { display: flex; align-items: center; width: max-content; padding: 15px 0;
+  animation: marquee 40s linear infinite; }
+.xticker:hover .xticker-track { animation-play-state: paused; }
+.xticker-word { display: inline-flex; align-items: center; white-space: nowrap; padding: 0 21px;
+  font-family: var(--ff-sans); font-size: 14px; font-weight: 500; letter-spacing: .01em;
+  color: rgba(223,240,244,.82); }
+.xticker-word::before { content: ""; flex: 0 0 auto; width: 5px; height: 5px; margin-right: 21px;
+  background: var(--b-accent); transform: rotate(45deg); border-radius: 1px; opacity: .85; }
+@media (max-width: 600px) { .xticker-label { display: none; } }
+@media (prefers-reduced-motion: reduce) { .xticker-track { animation: none; } }
+
 /* ---------------- ENTREPRISE & ASSOCIÉS ---------------- */
 .company { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
 .company-figures { display: flex; gap: 38px; margin-top: 34px; flex-wrap: wrap; }
