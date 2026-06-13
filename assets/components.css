@@ -28,11 +28,19 @@
 
 /* ---------------- MISSION (5 capacités) ---------------- */
 .mission-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; margin-top: 56px; }
-.mission-cell { background: var(--surface); padding: 34px 30px 38px; grid-column: span 4; display: flex; flex-direction: column; gap: 14px; min-height: 230px; transition: background .35s var(--ease); position: relative; }
-.mission-cell:hover { background: var(--bg-soft); }
+.mission-cell { appearance: none; -webkit-appearance: none; border: 0; margin: 0; width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer;
+  background: var(--surface); padding: 34px 30px 38px; grid-column: span 4; display: flex; flex-direction: column; gap: 14px; min-height: 230px; transition: background .35s var(--ease); position: relative; }
+.mission-cell:hover, .mission-cell:focus-visible { background: var(--bg-soft); outline: none; }
+.mission-cell:focus-visible { box-shadow: inset 0 0 0 2px var(--petrol); }
 .mission-cell .idx { font-family: var(--ff-mono); font-size: 12px; color: var(--petrol); letter-spacing: .1em; }
 .mission-cell h3 { font-size: 1.42rem; }
 .mission-cell p { margin: 0; color: var(--ink-soft); font-size: 15.5px; line-height: 1.55; }
+.mission-cell .mc-more { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-family: var(--ff-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--petrol); opacity: 0; transform: translateY(4px); transition: opacity .3s var(--ease), transform .3s var(--ease); }
+.mission-cell .mc-more .ar { display: inline-flex; transition: transform .3s var(--ease); }
+.mission-cell .mc-more svg { width: 15px; height: 15px; }
+.mission-cell:hover .mc-more, .mission-cell:focus-visible .mc-more { opacity: 1; transform: translateY(0); }
+.mission-cell:hover .mc-more .ar { transform: translateX(4px); }
+@media (hover: none) { .mission-cell .mc-more { opacity: 1; transform: none; } }
 .mission-cell:nth-child(4), .mission-cell:nth-child(5) { grid-column: span 6; }
 @media (max-width: 900px){ .mission-cell, .mission-cell:nth-child(4), .mission-cell:nth-child(5){ grid-column: span 6; } }
 @media (max-width: 560px){ .mission-cell, .mission-cell:nth-child(4), .mission-cell:nth-child(5){ grid-column: span 12; } }
@@ -124,6 +132,12 @@
 .mc-para:last-child { margin-bottom: 0; }
 .modal-hero--person { display: grid; place-items: center; background: linear-gradient(150deg, var(--petrol) 0%, var(--petrol-700) 100%); }
 .modal-initials { font-family: var(--ff-display); font-size: clamp(3rem, 7vw, 4.6rem); font-weight: 500; color: rgba(255,255,255,.92); letter-spacing: -.02em; }
+.modal-hero--cap { display: grid; place-items: center; background: linear-gradient(150deg, #07313d 0%, #04202a 100%); }
+.modal-hero--cap::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 60% at 72% 28%, rgba(33,201,221,.22), transparent 60%); }
+.modal-capidx { position: relative; font-family: var(--ff-mono); font-size: clamp(3.2rem, 8vw, 5rem); font-weight: 500; color: var(--b-accent); letter-spacing: .02em; }
+.mc-detail { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.mc-detail li { position: relative; padding-left: 24px; color: var(--ink-soft); font-size: 15.5px; line-height: 1.62; }
+.mc-detail li::before { content: ""; position: absolute; left: 2px; top: .55em; width: 6px; height: 6px; background: var(--petrol); transform: rotate(45deg); border-radius: 1px; }
 @media (max-width: 560px){ .modal-metrics { grid-template-columns: 1fr; } }
 
 /* ---------------- CLIENTS marquee ---------------- */

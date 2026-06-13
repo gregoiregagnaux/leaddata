@@ -33,20 +33,39 @@ window.LD = {
     "hero.s3l": { fr: "solutions sur-mesure", en: "bespoke solutions" },
 
     "mission.eyebrow": { fr: "Notre raison d’être", en: "What we’re here for" },
-    "mission.title":   { fr: "Donner du sens à la donnée, et de la donnée à la décision.",
+    "mission.title":   { fr: "Donner du sens à la donnée pour la transformer en produits, outils et décisions — au service de votre croissance.",
                          en: "Give meaning to data — and decisions to your business." },
     "mission.lede":    { fr: "Cinq leviers que nous activons sur chacune de nos missions.",
                          en: "Five levers we activate on every engagement." },
+    "mission.more":    { fr: "Voir le détail", en: "See details" },
     "mission.c1t": { fr: "Valoriser", en: "Unlock value" },
     "mission.c1d": { fr: "Transformer la donnée brute en connaissances exploitables.", en: "Turn raw data into actionable knowledge." },
+    "mission.c1det": { fr: [
+      "Identification et qualification des données disponibles et de leurs opportunités de valorisation.",
+      "Nettoyage, tri et enrichissement (notamment via l’open data) des données pour en tirer les enseignements les plus pertinents." ] },
     "mission.c2t": { fr: "Anticiper", en: "Anticipate" },
     "mission.c2d": { fr: "Augmenter les capacités d’analyse pour mieux prédire et anticiper.", en: "Boost analytical power for sharper prediction and foresight." },
+    "mission.c2det": { fr: [
+      "Identification de projets et évaluation amont et aval de leur ROI.",
+      "Création de méthodes, d’algorithmes et/ou de solutions sur mesure pour vos problématiques et vos métiers.",
+      "Accompagnement méthodologique sur la modélisation et la structuration de SI." ] },
     "mission.c3t": { fr: "Performer", en: "Perform" },
     "mission.c3d": { fr: "Améliorer la performance des dispositifs digitaux de nouvelle génération.", en: "Improve the performance of next-generation digital systems." },
+    "mission.c3det": { fr: [
+      "Intégration et connexion de ces développements dans vos ERP, CRM et outils métiers.",
+      "Pilotage de projets innovants, avec des approches et méthodes éprouvées selon vos problématiques, vos besoins et vos équipes." ] },
     "mission.c4t": { fr: "Construire", en: "Build" },
     "mission.c4d": { fr: "Bâtir les écosystèmes et les cas d’usage adaptés à votre contexte.", en: "Design the ecosystems and use cases that fit your context." },
+    "mission.c4det": { fr: [
+      "Mise à disposition d’outils, méthodes et architectures décisionnelles pour évaluer, scénariser, objectiver et piloter vos prises de décision.",
+      "Visualisation et transmission de l’information — graphiques, tableaux de bord, rapports automatiques, cartographies… — pour rendre vos données compréhensibles et utiles au quotidien des équipes.",
+      "Développement d’outils d’échange et de mise à disposition de l’information.",
+      "Définition, création, suivi et optimisation de nouveaux indicateurs / KPI." ] },
     "mission.c5t": { fr: "Faire évoluer", en: "Evolve" },
     "mission.c5d": { fr: "Optimiser et faire évoluer vos architectures décisionnelles.", en: "Optimise and evolve your decision-making architectures." },
+    "mission.c5det": { fr: [
+      "Accompagnement au changement, gouvernance de la donnée et formation : un projet d’innovation par la donnée ne porte ses fruits qu’une fois intégré aux process existants et accepté par les équipes.",
+      "Création d’une autonomie décisionnelle, intégrée à la politique de gouvernance de la donnée de l’entreprise." ] },
 
     "method.eyebrow": { fr: "Notre démarche", en: "Our method" },
     "method.title":   { fr: "Un accompagnement de bout en bout, de l’intuition à l’industrialisation.",

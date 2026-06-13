@@ -245,6 +245,25 @@
     document.body.style.overflow = "hidden";
   }
 
+  function openCapacity(cap) {
+    const L = state.lang;
+    const idx = cap.replace(/\D/g, "").padStart(2, "0");
+    const det = LD.i18n["mission." + cap + "det"] || {};
+    const items = det[L] || det.fr || [];
+    $("#modal-body").innerHTML = `
+      <button class="modal-close" aria-label="Close">${I.close}</button>
+      <div class="modal-hero modal-hero--cap"><span class="modal-capidx">${idx}</span></div>
+      <div class="modal-content">
+        <span class="mc-sector">${t("mission.eyebrow")}</span>
+        <h2>${t("mission." + cap + "t")}</h2>
+        <p class="muted">${t("mission." + cap + "d")}</p>
+        <ul class="mc-detail">${items.map(it => `<li>${it}</li>`).join("")}</ul>
+      </div>`;
+    $("#modal-body .modal-close").addEventListener("click", closeModal);
+    $("#modal").classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
   /* ---------- Marquee ---------- */
   function buildMarquee() {
     const track = $("#marquee-track");
@@ -377,6 +396,7 @@
     $("#modal-scrim").addEventListener("click", closeModal);
     document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
     $$(".m-more").forEach(b => b.addEventListener("click", () => openMember(b.dataset.member)));
+    $$(".mission-cell[data-cap]").forEach(c => c.addEventListener("click", () => openCapacity(c.dataset.cap)));
 
     window.addEventListener("scroll", () => { onScroll(); revealInView(); }, { passive: true });
     window.addEventListener("resize", revealInView, { passive: true });
