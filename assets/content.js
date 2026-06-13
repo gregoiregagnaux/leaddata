@@ -33,9 +33,9 @@ window.LD = {
     "hero.s3l": { fr: "solutions sur-mesure", en: "bespoke solutions" },
 
     "mission.eyebrow": { fr: "Notre raison d’être", en: "What we’re here for" },
-    "mission.title":   { fr: "Donner du sens à la donnée pour la transformer en produits, outils et décisions — au service de votre croissance.",
+    "mission.title":   { fr: "Donner du sens à la donnée.",
                          en: "Give meaning to data — and decisions to your business." },
-    "mission.lede":    { fr: "Cinq leviers que nous activons sur chacune de nos missions.",
+    "mission.lede":    { fr: "La transformer en produits, outils et décisions, au service de votre croissance — cinq leviers que nous activons sur chacune de nos missions.",
                          en: "Five levers we activate on every engagement." },
     "mission.more":    { fr: "Voir le détail", en: "See details" },
     "mission.c1t": { fr: "Valoriser", en: "Unlock value" },
