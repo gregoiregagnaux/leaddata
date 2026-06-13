@@ -146,6 +146,8 @@ window.LD = {
                        en: "A selection of projects — from spatial targeting to operational prediction." },
     "cases.all":     { fr: "Tous", en: "All" },
     "cases.more":    { fr: "Lire le cas", en: "Read case" },
+    "cases.draft":   { fr: "En construction", en: "In progress" },
+    "cases.draftBody": { fr: "Cas client en cours de rédaction — contenu à venir.", en: "Case study in progress — content coming soon." },
     "cases.challenge": { fr: "Le défi", en: "The challenge" },
     "cases.approach":  { fr: "Notre approche", en: "Our approach" },
     "cases.result":    { fr: "Le résultat", en: "The outcome" },
@@ -222,140 +224,42 @@ window.LD = {
   },
 
   /* ---- Use cases : the editable content collection (CMS-ready) ---- */
-  sectors: [
-    { key: "public",    fr: "Secteur public", en: "Public sector" },
-    { key: "retail",    fr: "Retail",         en: "Retail" },
-    { key: "industrie", fr: "Industrie",      en: "Industry" },
-    { key: "mobilite",  fr: "Mobilité",       en: "Mobility" },
-    { key: "assurance", fr: "Assurance",      en: "Insurance" }
+  categories: [
+    { key: "predictif",    fr: "Prédictif",       en: "Predictive" },
+    { key: "optimisation", fr: "Optimisation",    en: "Optimisation" },
+    { key: "outils",       fr: "Outils métiers",  en: "Business tools" },
+    { key: "modelisation", fr: "Modélisation",    en: "Modelling" },
+    { key: "conseil",      fr: "Conseil & Étude", en: "Advisory & Study" },
+    { key: "dataviz",      fr: "Data Viz",        en: "Data Viz" }
   ],
+
+  /* ---- Cas clients réels. draft:true = contenu à construire (slides à venir).
+     Champs optionnels gérés par le rendu : summary, tags, metric, metrics, challenge, approach, result. ---- */
   useCases: [
-    {
-      id: "logement",
-      sector: "public",
-      glyph: "map",
-      title: { fr: "Cartographie prédictive des besoins en logement", en: "Predictive mapping of housing needs" },
-      summary: { fr: "Un modèle territorial pour anticiper la demande et orienter la politique de l’habitat.",
-                 en: "A territorial model to anticipate demand and steer housing policy." },
-      tags: [ {fr:"Territorialisation",en:"Spatial"}, {fr:"Prédiction",en:"Prediction"}, {fr:"Données publiques",en:"Open data"} ],
-      metric: { v: "−30 %", k: { fr: "de délais d’étude", en: "study lead time" } },
-      metrics: [
-        { v: "−30 %", k: { fr: "délais d’étude", en: "study lead time" } },
-        { v: "12", k: { fr: "indicateurs croisés", en: "blended indicators" } },
-        { v: "1", k: { fr: "carte décisionnelle", en: "decision map" } }
-      ],
-      challenge: { fr: "Une collectivité devait prioriser ses investissements logement sans vision consolidée et prospective des besoins à l’échelle des quartiers.",
-                   en: "A local authority had to prioritise housing investment without a consolidated, forward-looking view of needs at neighbourhood scale." },
-      approach: { fr: "Croisement de données publiques (INSEE, fiscalité, permis) et propriétaires, modélisation prédictive, puis restitution sur une cartographie interactive.",
-                  en: "We blended open data (census, tax, permits) with proprietary sources, built a predictive model, and surfaced it on an interactive map." },
-      result: { fr: "Des arbitrages plus rapides et défendables, fondés sur une lecture spatiale claire de la demande à 3 ans.",
-                en: "Faster, defensible trade-offs grounded in a clear spatial reading of 3-year demand." }
-    },
-    {
-      id: "tournees",
-      sector: "public",
-      glyph: "route",
-      title: { fr: "Optimisation des tournées de collecte", en: "Waste-collection route optimisation" },
-      summary: { fr: "Réduire les kilomètres et l’empreinte carbone d’un service de collecte à l’échelle d’une agglomération.",
-                 en: "Cut mileage and carbon footprint of a metro-area collection service." },
-      tags: [ {fr:"Optimisation",en:"Optimisation"}, {fr:"Opérations",en:"Operations"}, {fr:"Cartographie",en:"Mapping"} ],
-      metric: { v: "+18 %", k: { fr: "d’efficacité opérationnelle", en: "operational efficiency" } },
-      metrics: [
-        { v: "+18 %", k: { fr: "efficacité", en: "efficiency" } },
-        { v: "−14 %", k: { fr: "kilomètres parcourus", en: "distance driven" } },
-        { v: "−1.2 t", k: { fr: "CO₂ / mois", en: "CO₂ / month" } }
-      ],
-      challenge: { fr: "Des tournées historiques figées, coûteuses et difficiles à faire évoluer face à l’urbanisation.",
-                   en: "Legacy routes, frozen, costly and hard to adapt to urban growth." },
-      approach: { fr: "Modélisation du réseau, algorithme d’optimisation sous contraintes (volumes, créneaux, flotte) et simulation de scénarios.",
-                  en: "Network modelling, constrained optimisation (volumes, time windows, fleet) and scenario simulation." },
-      result: { fr: "Des tournées recalculées, un service plus régulier et des économies réinvesties dans la qualité.",
-                en: "Recomputed routes, a steadier service and savings reinvested in quality." }
-    },
-    {
-      id: "ciblage",
-      sector: "retail",
-      glyph: "target",
-      title: { fr: "Ciblage territorial d’une offre commerciale", en: "Spatial targeting of a retail offer" },
-      summary: { fr: "Localiser les zones à plus fort potentiel pour un déploiement commercial maîtrisé.",
-                 en: "Pinpoint the highest-potential areas for a controlled commercial roll-out." },
-      tags: [ {fr:"Géomarketing",en:"Geomarketing"}, {fr:"Données publiques",en:"Open data"}, {fr:"Scoring",en:"Scoring"} ],
-      metric: { v: "×2,4", k: { fr: "taux de conversion local", en: "local conversion rate" } },
-      metrics: [
-        { v: "×2,4", k: { fr: "conversion locale", en: "local conversion" } },
-        { v: "9", k: { fr: "variables de potentiel", en: "potential variables" } },
-        { v: "Top 5 %", k: { fr: "zones priorisées", en: "areas prioritised" } }
-      ],
-      challenge: { fr: "Un réseau souhaitait concentrer ses efforts marketing là où le potentiel réel — et non supposé — était le plus fort.",
-                   en: "A retail network wanted to focus marketing where real — not assumed — potential was highest." },
-      approach: { fr: "Construction d’un score de potentiel par maille géographique, enrichi de données socio-démographiques publiques.",
-                  en: "We built a potential score per geographic cell, enriched with public socio-demographic data." },
-      result: { fr: "Un déploiement concentré sur les meilleures zones et un coût d’acquisition divisé par deux.",
-                en: "A roll-out focused on the best areas and acquisition cost halved." }
-    },
-    {
-      id: "dashboard",
-      sector: "industrie",
-      glyph: "gauge",
-      title: { fr: "Tableau de bord décisionnel temps réel", en: "Real-time decision dashboard" },
-      summary: { fr: "Une vue unique et fiable pour piloter la production au fil de l’eau.",
-                 en: "A single, reliable view to steer production on the fly." },
-      tags: [ {fr:"Data viz",en:"Data viz"}, {fr:"Temps réel",en:"Real time"}, {fr:"Gouvernance",en:"Governance"} ],
-      metric: { v: "×5", k: { fr: "rapidité de décision", en: "faster decisions" } },
-      metrics: [
-        { v: "×5", k: { fr: "rapidité de décision", en: "faster decisions" } },
-        { v: "1", k: { fr: "source de vérité", en: "source of truth" } },
-        { v: "24/7", k: { fr: "supervision", en: "monitoring" } }
-      ],
-      challenge: { fr: "Des données dispersées dans plusieurs systèmes, des reportings manuels et des décisions tardives.",
-                   en: "Data scattered across systems, manual reporting and late decisions." },
-      approach: { fr: "Mise en place d’un S.I. décisionnel dédié, constitution d’indicateurs et interfaces de restitution temps réel.",
-                  en: "We set up a dedicated decision-support system, defined KPIs and built real-time delivery interfaces." },
-      result: { fr: "Des équipes alignées sur une même réalité chiffrée et des décisions prises en heures, plus en jours.",
-                en: "Teams aligned on the same numbers, decisions made in hours rather than days." }
-    },
-    {
-      id: "scoring",
-      sector: "assurance",
-      glyph: "layers",
-      title: { fr: "Enrichissement de données clients par données publiques", en: "Customer data enrichment via open data" },
-      summary: { fr: "Affiner la connaissance client et la précision du scoring sans collecter davantage.",
-                 en: "Sharpen customer knowledge and scoring precision without collecting more." },
-      tags: [ {fr:"Enrichissement",en:"Enrichment"}, {fr:"Machine learning",en:"Machine learning"}, {fr:"Données publiques",en:"Open data"} ],
-      metric: { v: "+22 %", k: { fr: "de précision de scoring", en: "scoring precision" } },
-      metrics: [
-        { v: "+22 %", k: { fr: "précision scoring", en: "scoring precision" } },
-        { v: "40+", k: { fr: "variables ajoutées", en: "variables added" } },
-        { v: "0", k: { fr: "donnée perso. ajoutée", en: "extra personal data" } }
-      ],
-      challenge: { fr: "Un modèle de scoring limité par la profondeur des données disponibles en interne.",
-                   en: "A scoring model capped by the depth of available in-house data." },
-      approach: { fr: "Enrichissement par données publiques territorialisées, sélection de variables et ré-entraînement du modèle.",
-                  en: "Enrichment with territorialised open data, feature selection and model retraining." },
-      result: { fr: "Un scoring nettement plus précis, dans le respect strict de la donnée personnelle.",
-                en: "A markedly sharper score, with strict respect for personal data." }
-    },
-    {
-      id: "mobilite",
-      sector: "mobilite",
-      glyph: "pulse",
-      title: { fr: "Observatoire de la mobilité urbaine", en: "Urban mobility observatory" },
-      summary: { fr: "Réunir des sources hétérogènes en un observatoire partagé entre services.",
-                 en: "Bring heterogeneous sources together into an observatory shared across departments." },
-      tags: [ {fr:"Territorialisation",en:"Spatial"}, {fr:"Data viz",en:"Data viz"}, {fr:"Écosystème",en:"Ecosystem"} ],
-      metric: { v: "1", k: { fr: "source pour 12 services", en: "source for 12 teams" } },
-      metrics: [
-        { v: "12", k: { fr: "services connectés", en: "teams connected" } },
-        { v: "6", k: { fr: "sources unifiées", en: "sources unified" } },
-        { v: "Live", k: { fr: "cartographie", en: "mapping" } }
-      ],
-      challenge: { fr: "Chaque service disposait de ses propres chiffres, sans langage commun pour piloter la mobilité.",
-                   en: "Each department had its own figures, with no common language to steer mobility." },
-      approach: { fr: "Unification des sources, modèle de données partagé et cartographie dynamique accessible à tous.",
-                  en: "Source unification, a shared data model and a dynamic map accessible to all." },
-      result: { fr: "Un observatoire commun qui aligne les services et fluidifie la décision publique.",
-                en: "A shared observatory that aligns departments and smooths public decision-making." }
-    }
+    { id: "saint-gobain", category: "predictif", glyph: "gauge", draft: true, slide: 9,
+      title: { fr: "Saint-Gobain", en: "Saint-Gobain" } },
+    { id: "enedis-elagage", category: "optimisation", glyph: "route", draft: true, slide: 16,
+      title: { fr: "Enedis — Élagage", en: "Enedis — Vegetation management" } },
+    { id: "saur-energie", category: "optimisation", glyph: "pulse", draft: true, slide: 21,
+      title: { fr: "SAUR — Énergie", en: "SAUR — Energy" } },
+    { id: "kalhyge-sdd", category: "optimisation", glyph: "map", draft: true, slide: 20,
+      title: { fr: "KALHYGE — Schéma directeur", en: "KALHYGE — Master plan" } },
+    { id: "ubaldi-dior-caft", category: "outils", glyph: "layers", draft: true, slide: 10,
+      title: { fr: "UBALDI & Dior — CAFT", en: "UBALDI & Dior — CAFT" } },
+    { id: "ubaldi-nestor", category: "outils", glyph: "gauge", draft: true, slide: 13,
+      title: { fr: "UBALDI — Nestor", en: "UBALDI — Nestor" } },
+    { id: "modelabs", category: "outils", glyph: "target", draft: true, slide: "11-12",
+      title: { fr: "Modelabs", en: "Modelabs" } },
+    { id: "cerema-strateau", category: "modelisation", glyph: "layers", draft: true, slide: 14,
+      title: { fr: "CEREMA — STRATEAU", en: "CEREMA — STRATEAU" } },
+    { id: "transports-ecolabel", category: "conseil", glyph: "target", draft: true, slide: 18,
+      title: { fr: "Min. des Transports — Écolabel", en: "Ministry of Transport — Ecolabel" } },
+    { id: "europcar-roadmap", category: "conseil", glyph: "route", draft: true, slide: 22,
+      title: { fr: "Europcar — Road Map Data", en: "Europcar — Data Road Map" } },
+    { id: "samsung-data", category: "conseil", glyph: "map", draft: true, slide: 19,
+      title: { fr: "Samsung — Valorisation Data", en: "Samsung — Data valorisation" } },
+    { id: "le-phare-territoires", category: "dataviz", glyph: "pulse", draft: true, slide: 15,
+      title: { fr: "Le Phare — Analyses territoriales", en: "Le Phare — Territorial analytics" } }
   ],
 
   /* placeholder client names for the marquee */

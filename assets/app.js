@@ -165,38 +165,44 @@
   }
 
   /* ---------- Use cases ---------- */
-  function sectorLabel(key) {
-    const s = LD.sectors.find(x => x.key === key);
+  function categoryLabel(key) {
+    const s = LD.categories.find(x => x.key === key);
     return s ? s[state.lang] : key;
   }
   function buildFilters() {
     const wrap = $("#uc-filters");
     if (!wrap) return;
     const mk = (key, label) => `<button class="uc-filter" data-f="${key}" aria-pressed="${state.filter===key}">${label}</button>`;
-    wrap.innerHTML = mk("all", t("cases.all")) + LD.sectors.map(s => mk(s.key, s[state.lang])).join("");
+    wrap.innerHTML = mk("all", t("cases.all")) + LD.categories.map(s => mk(s.key, s[state.lang])).join("");
     $$(".uc-filter", wrap).forEach(b => b.addEventListener("click", () => { state.filter = b.dataset.f; renderCases(); }));
   }
   function renderCases() {
     buildFilters();
     const grid = $("#uc-grid");
     if (!grid) return;
-    const list = LD.useCases.filter(u => state.filter === "all" || u.sector === state.filter);
+    const L = state.lang;
+    const list = LD.useCases.filter(u => state.filter === "all" || u.category === state.filter);
     if (!list.length) { grid.innerHTML = `<div class="uc-empty">—</div>`; return; }
-    grid.innerHTML = list.map(u => `
-      <button class="uc-card reveal" data-id="${u.id}">
+    grid.innerHTML = list.map(u => {
+      const foot = u.draft
+        ? `<span class="uc-draft">${t("cases.draft")}</span>`
+        : (u.metric ? `<span class="uc-metric"><span class="v">${u.metric.v}</span><span class="k">${u.metric.k[L]}</span></span>` : `<span></span>`);
+      return `
+      <button class="uc-card reveal${u.draft ? " is-draft" : ""}" data-id="${u.id}">
         <div class="uc-thumb">
-          <span class="uc-sector">${sectorLabel(u.sector)}</span>
+          <span class="uc-sector">${categoryLabel(u.category)}</span>
           ${ucGlyph(u.glyph)}
         </div>
         <div class="uc-body">
-          <h3>${u.title[state.lang]}</h3>
-          <p>${u.summary[state.lang]}</p>
+          <h3>${u.title[L]}</h3>
+          ${u.summary && u.summary[L] ? `<p>${u.summary[L]}</p>` : ""}
           <div class="uc-foot">
-            <span class="uc-metric"><span class="v">${u.metric.v}</span><span class="k">${u.metric.k[state.lang]}</span></span>
+            ${foot}
             <span class="more">${t("cases.more")} ${I.arrow}</span>
           </div>
         </div>
-      </button>`).join("");
+      </button>`;
+    }).join("");
     $$(".uc-card", grid).forEach(c => c.addEventListener("click", () => openCase(c.dataset.id)));
     revealInView();
     requestAnimationFrame(revealInView);
@@ -205,18 +211,20 @@
     const u = LD.useCases.find(x => x.id === id);
     if (!u) return;
     const L = state.lang;
+    const block = (key, val) => val && val[L] ? `<div class="mc-block"><h4>${t(key)}</h4><p>${val[L]}</p></div>` : "";
     $("#modal-body").innerHTML = `
       <button class="modal-close" aria-label="Close">${I.close}</button>
       <div class="modal-hero">${ucGlyph(u.glyph)}</div>
       <div class="modal-content">
-        <span class="mc-sector">${sectorLabel(u.sector)}</span>
+        <span class="mc-sector">${categoryLabel(u.category)}</span>
         <h2>${u.title[L]}</h2>
-        <p class="muted">${u.summary[L]}</p>
-        <div class="mc-tags">${u.tags.map(tg => `<span class="mc-tag">${tg[L]}</span>`).join("")}</div>
-        <div class="modal-metrics">${u.metrics.map(m => `<div class="mm"><div class="v">${m.v}</div><div class="k">${m.k[L]}</div></div>`).join("")}</div>
-        <div class="mc-block"><h4>${t("cases.challenge")}</h4><p>${u.challenge[L]}</p></div>
-        <div class="mc-block"><h4>${t("cases.approach")}</h4><p>${u.approach[L]}</p></div>
-        <div class="mc-block"><h4>${t("cases.result")}</h4><p>${u.result[L]}</p></div>
+        ${u.summary && u.summary[L] ? `<p class="muted">${u.summary[L]}</p>` : ""}
+        ${u.tags ? `<div class="mc-tags">${u.tags.map(tg => `<span class="mc-tag">${tg[L]}</span>`).join("")}</div>` : ""}
+        ${u.metrics ? `<div class="modal-metrics">${u.metrics.map(m => `<div class="mm"><div class="v">${m.v}</div><div class="k">${m.k[L]}</div></div>`).join("")}</div>` : ""}
+        ${block("cases.challenge", u.challenge)}
+        ${block("cases.approach", u.approach)}
+        ${block("cases.result", u.result)}
+        ${u.draft ? `<div class="mc-block"><p class="muted">${t("cases.draftBody")}</p></div>` : ""}
       </div>`;
     $("#modal-body .modal-close").addEventListener("click", closeModal);
     const m = $("#modal");
