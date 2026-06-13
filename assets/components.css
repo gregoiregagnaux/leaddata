@@ -47,13 +47,38 @@
 
 /* ---------------- DÉMARCHE (4 étapes) ---------------- */
 .steps { margin-top: 56px; display: grid; gap: 18px; }
-.step { display: grid; grid-template-columns: 92px 1fr auto; align-items: center; gap: 30px; padding: 30px 32px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); transition: transform .35s var(--ease), box-shadow .35s, border-color .35s; }
-.step:hover { transform: translateX(6px); box-shadow: var(--shadow-md); border-color: var(--petrol-200); }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; transition: box-shadow .35s, border-color .35s; }
+.step:hover { box-shadow: var(--shadow-md); border-color: var(--petrol-200); }
+.step.is-open { border-color: var(--petrol-200); box-shadow: var(--shadow-md); }
+.step-head { margin: 0; font: inherit; }
+.step-btn { appearance: none; -webkit-appearance: none; border: 0; background: transparent; width: 100%; cursor: pointer; font: inherit; color: inherit; text-align: left;
+  display: grid; grid-template-columns: 92px 1fr auto; align-items: start; gap: 30px; padding: 30px 32px; }
+.step-btn:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--petrol); border-radius: var(--radius-lg); }
 .step .num { font-family: var(--ff-display); font-size: 2.6rem; font-weight: 500; color: var(--petrol); line-height: 1; letter-spacing: -.02em; }
-.step .body h3 { font-size: 1.4rem; margin-bottom: 7px; }
-.step .body p { margin: 0; color: var(--ink-soft); font-size: 15.5px; max-width: 64ch; }
-.step .phase { font-family: var(--ff-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; }
-@media (max-width: 720px){ .step { grid-template-columns: 60px 1fr; gap: 18px; padding: 24px; } .step .num{ font-size: 2rem;} .step .phase{ display: none; } }
+.step-main { min-width: 0; }
+.step-kicker { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 11px; }
+.step-kicker .phase { font-family: var(--ff-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); }
+.step-kicker .step-dur { font-family: var(--ff-mono); font-size: 11px; letter-spacing: .04em; color: var(--petrol); background: var(--petrol-050); border: 1px solid var(--petrol-200); padding: 4px 11px; border-radius: 999px; white-space: nowrap; }
+.step-title { display: block; font-family: var(--ff-display); font-size: 1.4rem; letter-spacing: -.01em; margin-bottom: 8px; }
+.step-intro { display: block; color: var(--ink-soft); font-size: 15.5px; line-height: 1.55; max-width: 64ch; }
+.step .chev { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; flex: none; border-radius: 50%; border: 1px solid var(--line); color: var(--ink-soft); transition: transform .35s var(--ease), background .3s, color .3s, border-color .3s; }
+.step-btn:hover .chev { background: var(--petrol-050); color: var(--petrol); border-color: var(--petrol-200); }
+.step.is-open .chev { transform: rotate(180deg); background: var(--petrol); color: #fff; border-color: var(--petrol); }
+.step-detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .38s var(--ease); }
+.step.is-open .step-detail { grid-template-rows: 1fr; }
+.step-detail > .sd-inner { overflow: hidden; min-height: 0; }
+.step-detail ul { list-style: none; margin: 0; padding: 0 32px 28px 154px; }
+.step-detail li { position: relative; padding-left: 24px; color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
+.step-detail li + li { margin-top: 13px; }
+.step-detail li::before { content: ""; position: absolute; left: 2px; top: .55em; width: 6px; height: 6px; background: var(--petrol); transform: rotate(45deg); border-radius: 1px; }
+@media (max-width: 720px){
+  .step-btn { grid-template-columns: 50px 1fr auto; gap: 16px; padding: 22px; }
+  .step .num { font-size: 1.9rem; }
+  .step-title { font-size: 1.22rem; }
+  .step .chev { width: 32px; height: 32px; }
+  .step-detail ul { padding: 0 22px 24px 22px; }
+}
+@media (prefers-reduced-motion: reduce){ .step-detail { transition: none; } .step .chev { transition: none; } }
 
 /* ---------------- DISTINCTION (3 atouts) ---------------- */
 .feature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 56px; }

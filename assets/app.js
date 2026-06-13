@@ -30,6 +30,7 @@
     pinSm:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-5.3 7-11a7 7 0 1 0-14 0c0 5.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>',
     arrow:  '<svg class="arr" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
     close:  '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+    chevron:'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9"><path d="m6 9 6 6 6-6"/></svg>',
     menu:   '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     globe:  '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg>'
   };
@@ -158,6 +159,7 @@
     renderCases();
     buildMarquee();
     buildExpertise();
+    buildSteps();
     buildBrandVisual();
     typewriter();
   }
@@ -262,6 +264,27 @@
     $("#modal-body .modal-close").addEventListener("click", closeModal);
     $("#modal").classList.add("open");
     document.body.style.overflow = "hidden";
+  }
+
+  /* ---------- Démarche : accordéon (détail des phases) ---------- */
+  function buildSteps() {
+    const L = state.lang;
+    $$("[data-detail]").forEach(ul => {
+      const det = LD.i18n["method." + ul.dataset.detail + "det"] || {};
+      const items = det[L] || det.fr || [];
+      ul.innerHTML = items.map(it => `<li>${it}</li>`).join("");
+      const wrap = ul.closest(".step-detail");
+      if (wrap) wrap.hidden = false; // JS présent : on pilote l'ouverture en CSS (fallback no-JS = replié)
+    });
+  }
+  function toggleStep(btn) {
+    const step = btn.closest(".step");
+    const isOpen = step.classList.contains("is-open");
+    $$(".step.is-open").forEach(s => {       // single-open : on referme les autres
+      s.classList.remove("is-open");
+      s.querySelector(".step-btn").setAttribute("aria-expanded", "false");
+    });
+    if (!isOpen) { step.classList.add("is-open"); btn.setAttribute("aria-expanded", "true"); }
   }
 
   /* ---------- Marquee ---------- */
@@ -386,6 +409,7 @@
     renderCases();
     buildMarquee();
     buildExpertise();
+    buildSteps();
     heroCanvas.init();
     buildBrandVisual();
 
@@ -397,6 +421,7 @@
     document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
     $$(".m-more").forEach(b => b.addEventListener("click", () => openMember(b.dataset.member)));
     $$(".mission-cell[data-cap]").forEach(c => c.addEventListener("click", () => openCapacity(c.dataset.cap)));
+    $$(".step-btn").forEach(b => b.addEventListener("click", () => toggleStep(b)));
 
     window.addEventListener("scroll", () => { onScroll(); revealInView(); }, { passive: true });
     window.addEventListener("resize", revealInView, { passive: true });
